@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F4DDC80-6E22-4A8A-80E2-C4169AE35D9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRabbitBus.Framework.Tests</RootNamespace>
+    <AssemblyName>NRabbitBus.Framework.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentAssertions.2.0.0.1\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\RabbitMQ.Client.3.0.0\lib\net30\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Exchanges.cs" />
+    <Compile Include="Configuration\MessageOrder.cs" />
+    <Compile Include="Configuration\Queues.cs" />
+    <Compile Include="Configuration\RabbitConfiguration.cs" />
+    <Compile Include="Configuration\Routes.cs" />
+    <Compile Include="Having_ComponentLocator.cs" />
+    <Compile Include="Having_container_bootstrapped.cs" />
+    <Compile Include="Having_Rabbit.cs" />
+    <Compile Include="Having_RabbitBus.cs" />
+    <Compile Include="Logging\Logging.cs" />
+    <Compile Include="MessageProcess\JsonMessageStringifierTest.cs" />
+    <Compile Include="MessageProcess\Using_ExtendednMessageFormatter.cs" />
+    <Compile Include="MessageProcess\Using_JsonExtendedMessageStringifier.cs" />
+    <Compile Include="MessageProcess\Using_MessageFormatter.cs" />
+    <Compile Include="MessageProcess\Utf8MessageSerializerTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publishing\When_using_ResponseAwaiter.cs" />
+    <Compile Include="Publishing\When_using_RpcClient.cs" />
+    <Compile Include="Publishing\While_using_MessagePublisher.cs" />
+    <Compile Include="Subscription\Having_class_derived_from_MessagePipelineBase.cs" />
+    <Compile Include="Subscription\Having_MessageHandler.cs" />
+    <Compile Include="Subscription\Having_MessageHandlerOrderProvider.cs" />
+    <Compile Include="Subscription\Having_MessageHandlerTypeCache.cs" />
+    <Compile Include="Subscription\Having_MessageHandlerWithResult.cs" />
+    <Compile Include="Subscription\Having_MessagePipeline.cs" />
+    <Compile Include="Subscription\When_handling_RPC_call.cs" />
+    <Compile Include="Subscription\When_handling_subscription.cs" />
+    <Compile Include="Subscription\When_handling_subscription_with_result.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\evilduck\EvilDuck.Framework\EvilDuck.Framework.csproj">
+      <Project>{1DCE2DAB-24B8-497B-9BA9-6136455C4FDB}</Project>
+      <Name>EvilDuck.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\NRabbitBus.Framework\NRabbitBus.Framework.csproj">
+      <Project>{AC55BCBC-C9E2-4E98-A31C-82BAAA42EC26}</Project>
+      <Name>NRabbitBus.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

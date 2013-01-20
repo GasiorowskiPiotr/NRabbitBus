@@ -1,0 +1,16 @@
+*/bin/*
+*/obj/*
+_ReSharper.NRabbitBus/*
+NRabbitBus.sln.DotSettings
+NRabbitBus.sln.DotSettings.user
+NRabbitBus.v11.suo
+NRabbitBus.Endpoint/NRabbitBus.Endpoint.csproj.user
+*.csproj.user
+*/bin/Debug/*
+*/bin/Debug/*
+**/bin/Debug/*.*
+*/*/bin/*/*
+*/*/obj/*/*
+*/*/*/*/*/*.dll
+*/*/*/bin/Debug/*
+*/*/*/obj/Debug/*
